@@ -29,7 +29,7 @@ import android.util.Log;
 import android.view.View.OnClickListener;
 
 public class JSONCalls {
-
+	
 	public final static String META_SCORE_KEY = "meta_score";
 	public final static String SCORE_KEY = "score";
 	public final static String ALBUM_KEY = "release";
@@ -111,9 +111,6 @@ public class JSONCalls {
 
 					// Get hold of the response entity
 					HttpEntity entity = response.getEntity();
-					// If the response does not enclose an entity, there is no
-					// need
-					// to worry about connection release
 
 					String result = "";
 					result = jSONtoString(entity);
@@ -285,7 +282,7 @@ public class JSONCalls {
 						difference = Math.abs(s1.get(i).pitches.get(j)
 								- s2.get(i).pitches.get(j));
 						total++;
-						if (difference < 0.55)
+						if (difference < 0.25)
 						{
 							correct++;
 						}
